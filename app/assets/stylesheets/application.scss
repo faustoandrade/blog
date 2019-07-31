@@ -16,13 +16,14 @@
 @import "materialize/components/color-variables";
 @import "materialize";
 
-.wrapper {
-  padding-left: 72px;
-  padding-top: 15px;
-  padding-right: 10px;
-  @media #{$medium-and-down} { padding-left: 10px; }
+.nav-wrapper{
+  margin-top: 0px;
+  background-color: #2164FF;
+  font-family: 'Annie Use Your Telescope', cursive;
 }
 
-#body_row {
-  margin-top: 25px;
+.brand-logo{
+  font-family: 'Annie Use Your Telescope', cursive;
+  margin-left: 20px;
+  margin-top: -10px;
 }
