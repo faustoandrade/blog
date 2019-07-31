@@ -1,0 +1,25 @@
+<header>
+  <nav>
+    <div class="nav-wrapper">
+      <a href= '' class="brand-logo "><h4>Mi Primer Blog</h4></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="sass.html" class="flow-text"><h4>Inicio</h4></a></li>
+        <li><a href="badges.html" class="flow-text"><h4>Diseño</h4></a></li>
+        <li><a href="collapsible.html" class="flow-text"><h4>Programación</h4></a></li>
+        <li><a href="collapsible.html" class="flow-text"><h4>Tecnología</h4></a></li>
+        <% if user_signed_in? %>
+          <li class="col-md">
+            <%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delte %>
+          </li>
+          <% else %>
+          <li class="col-md">
+            <%= link_to 'Iniciar sesión', new_user_session_path %>
+          </li>
+          <li class="col-md">
+            <%= link_to 'Crear cuenta', new_user_registration_path %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
+</header>
