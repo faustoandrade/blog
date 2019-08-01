@@ -16,9 +16,9 @@
 @import "materialize/components/color-variables";
 @import "materialize";
 
-.nav-wrapper{
+.wrapper{
   margin-top: 0px;
-  background-color: #2164FF;
+  background-color: #4717F6;
   font-family: 'Annie Use Your Telescope', cursive;
 }
 
@@ -43,7 +43,7 @@
 }
 
 .btn{
-  background-color: inherit;
+  background-color: #4717F6;
   border: none;
   outline: none;
   text-transform: uppercase;
