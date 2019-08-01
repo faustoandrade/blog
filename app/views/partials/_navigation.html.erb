@@ -9,7 +9,7 @@
         <li><a href="collapsible.html" class="flow-text"><h4>Tecnología</h4></a></li>
         <% if user_signed_in? %>
           <li class="col-md">
-            <%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delte %>
+            <%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete %>
           </li>
           <% else %>
           <li class="col-md">

@@ -1,12 +1,9 @@
 class ArticlesController < ApplicationController
+  before_action :authenticate_user!, except: [:show, :index]
+  before_action :set_article, except: [:index, :new, :create]
   def index
     # obtiene todos los registros de la tabla que corresponde a este modelo (Articles)
     @articles = Article.all
-  end
-
-  def show
-    #encontramos un registro por su id
-    @article = Article.find(params[:id])
   end
 
   def new
@@ -14,11 +11,10 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    @article = Article.find(params[:id])
   end
 
   def create
-    @article = Article.new(article_params)
+    @article = current_user.articles.new(article_params)
     if @article.save
       redirect_to @article
     else
@@ -27,8 +23,6 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    #@article.update_attributes({title: 'Nuevo titulo'})
-    @article = Article.find(params[:id])
     if @article.update(article_params)
       redirect_to @article
     else
@@ -38,13 +32,20 @@ class ArticlesController < ApplicationController
 
   def destroy
     # elimina el objeto de la base de datos
-    @article = Article.find(params[:id])
     @article.destroy
     redirect_to articles_path
   end
 
   # metodos privados de la clase
   private
+
+  def validate_user
+    redirect_to new_user_session_path, notice: 'Necesitas iniciar sesión'
+  end
+
+  def set_article
+    @article = Article.find(params[:id])
+  end
 
   def article_params
     params.require(:article).permit(:title, :body)

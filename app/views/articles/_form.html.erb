@@ -1,11 +1,11 @@
-<h1><%= name %>articulo</h1>
+<h1><%= name %> articulo</h1>
 <%= form_for(@article) do |f|%>
   <div class="field">
-    <%= f.text_field :title, placeholder: 'titulo' class: 'form-control' %>
+    <%= f.text_field :title, placeholder: 'titulo', class: 'form_control' %>
   </div>
   <div class="field">
     <%= f.text_area :body, placeholder: 'Escribe aquí el articulo', style: '
-      height: 250px;' class: 'form-control' %>
+      height: 250px;', class: 'form_control' %>
   </div>
   <div class="field">
     <%= f.submit 'Guardar', class: 'btn' %>
