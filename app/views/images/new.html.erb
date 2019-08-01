@@ -1,0 +1,6 @@
+<p>bienvenidos a mi proxima imagen</p>
+<%= form_for :image, url: images_path do |f| %>
+  <%= f.label :description %><br>
+  <%= f.text_field :description %><br>
+  <%= f.submit %><br>
+<% end %>

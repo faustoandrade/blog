@@ -6,6 +6,9 @@ class ArticlesController < ApplicationController
     @articles = Article.all
   end
 
+  def show
+  end
+
   def new
     @article = Article.new
   end
@@ -33,7 +36,7 @@ class ArticlesController < ApplicationController
   def destroy
     # elimina el objeto de la base de datos
     @article.destroy
-    redirect_to articles_path
+    redirect_to articles_path, notice: 'Articulo eliminado'
   end
 
   # metodos privados de la clase

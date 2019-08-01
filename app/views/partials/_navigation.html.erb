@@ -2,14 +2,23 @@
   <nav>
     <div class="wrapper">
       <a href= '' class="brand-logo "><h4>Mi Primer Blog</h4></a>
+      <a href= '' class="brand-logo center"><h4>Mis Articulos</h4></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <% if user_signed_in? %>
-        <li class="">
-          <h4><%= link_to 'Inicio', root_path %></h4></a>
-        </li>
-        <li><a href="badges.html" class=""><h4>New</h4></a></li>
-        <li><a href="collapsible.html" class="flow-text"><h4>show</h4></a></li>
-        <li><a href="collapsible.html" class="flow-text"><h4>Edit</h4></a></li>
+
+          <li class="">
+            <h4><%= link_to 'Inicio', root_path %></h4></a>
+          </li>
+          <!-- <li><a href="badges.html" class=""><h4>Articulos</h4></a></li> -->
+          <li class= 'col-md'>
+            <!-- <h4><%= link_to 'Articulos', articles_path %></h4> -->
+          </li>
+          <li class= 'col-md'>
+            <h4><%= link_to 'Crear', new_article_path %></h4>
+          </li>
+          <li class= 'col-md'>
+            <h4><%= link_to 'Mostrar', articles_path %></h4>
+          </li>
 
           <li class= 'col-md'>
             <h4><%= link_to  'Cerrar sesión', destroy_user_session_path, method: :delete %></h4>
