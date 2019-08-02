@@ -13,19 +13,29 @@
   </thead>
 
   <tbody>
-    <% @comments.each do |comment| %>
+      <% @comments.each do |comment| %>
       <tr>
-        <td><%= comment.user %></td>
-        <td><%= comment.article %></td>
+        <td><%= comment.user.email %></td>
+        <td><%= comment.article.title %></td>
         <td><%= comment.body %></td>
-        <td><%= link_to 'Show', comment %></td>
-        <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
-        <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <%= link_to comment do %>
+            <i class="material-icons">show</i>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to edit_comment_path(comment) do %>
+            <i class="material-icons">edit</i>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to comment, method: :delete, data: { confirm: 'Are you sure?' } do %>
+            <i class="material-icons">delete</i>
+          <% end %>
+        </td>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Comment', new_comment_path %>
+      <% end %>
+    </tbody>
+  </table>
+<!-- <br>
+<%= link_to 'New Comment', new_comment_path %> -->
