@@ -7,23 +7,23 @@
       </li>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <% if user_signed_in? %>
-        <li class= 'col-md'>
+        <li class= 'col-md sidenav-trigger'>
           <h4><%= link_to 'Crear', new_article_path %></h4>
         </li>
-        <li class= 'col-md'>
+        <li class= 'col-md sidenav-trigger'>
           <h4><%= link_to 'Mostrar', articles_path %></h4>
         </li>
-        <li class= 'col-md'>
+        <li class= 'col-md sidenav-trigger'>
           <h4><%= link_to 'Comentarios', comments_path %></h4>
         </li>
-        <li class= 'col-md'>
+        <li class= 'col-md sidenav-trigger'>
           <h4><%= link_to  'Cerrar sesión', destroy_user_session_path, method: :delete %></h4>
         </li>
         <% else %>
-        <li class="col-md">
+        <li class="col-md sidenav-trigger">
           <%= link_to 'Iniciar sesión', new_user_session_path %>
         </li>
-        <li class="col-md">
+        <li class="col-md sidenav-trigger">
           <%= link_to 'Crear cuenta', new_user_registration_path %>
         </li>
         <% end %>
