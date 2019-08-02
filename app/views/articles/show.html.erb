@@ -1,15 +1,17 @@
-<h1><%= @article.title %></h1>
-<% unless @article.user.nil? %>
-<p>
-  Escrito por: <%= @article.user.email %>
-</p>
-<% end %>
+<div class="">
+  <% unless @article.user.nil? %>
+  <p>
+    Escrito por: <%= @article.user.email %>
+  </p>
+  <% end %>
+  <div>
+    <h1><%= @article.title %></h1>
+    <%= @article.body %><br>
+  </div>
+  <div><br>
+    <%= link_to 'Editar', edit_article_path(@article) %>
+  </div><br>
+  <div>
+    <%= link_to 'eliminar', article_path, method: :delete %>
+  </div>
 <div>
-  <%= @article.body %>
-</div>
-<div>
-  <%= link_to 'Editar', edit_article_path(@article) %>
-</div>
-<div>
-  <%= link_to 'eliminar', article_path, method: :delete %>
-</div>
