@@ -4,7 +4,6 @@ class CreateArticles < ActiveRecord::Migration[5.2]
       t.string :title
       t.text :body
       t.integer :visits_count
-
       t.timestamps
     end
   end
