@@ -9,9 +9,22 @@
     <%= @article.body %><br>
   </div>
   <div><br>
-    <%= link_to 'Editar', edit_article_path(@article) %>
+    <%= link_to 'Editar', edit_article_path %>
   </div><br>
   <div>
     <%= link_to 'eliminar', article_path, method: :delete %>
+  </div><br>
+  <div>
+    <%= link_to 'Atras', articles_path %>
   </div>
 <div>
+<div class="">
+  <% @article.comments.each do |comment| %>
+    <div class="" >
+      <h5><%= comment.body %></h5>
+    </div>
+  <% end %>
+</div>
+<div class="">
+  <%= render 'comments/form', comment: @article.comments.new %>
+</div>
